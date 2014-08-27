@@ -7,7 +7,7 @@
     <span class="author"><%= @photo.author %></span>
   </figcaption>
   <span class="toolbox">
-    <%= link_to "Edit", photo_path, :'data-method' => 'patch' %>
+    <%= link_to "Edit", edit_photo_path %>
     <%= link_to "Delete", photo_path, :'data-method' => 'delete' %>
   </span>
 </figure>

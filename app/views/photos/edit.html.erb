@@ -1,0 +1,15 @@
+<h1>Edit the photo's details</h1>
+
+<%= form_for :photo, url: photo_path, :html => {:method => :put} do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title, :value => "#{@photo.title}" %>
+  <%= form.label :author %>
+  <%= form.text_field :author, :value => "#{@photo.author}" %>
+  <%= form.label :url %>
+  <%= form.text_field :url, :value => "#{@photo.url}" %>
+  <%= form.submit "Edit details" %>
+<% end %>
+
+<p>
+  <%= link_to "Back to photo", photo_path %>
+</p>
