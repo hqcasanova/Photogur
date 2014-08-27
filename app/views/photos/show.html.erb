@@ -1,0 +1,16 @@
+<h1>Show image</h1>
+
+<figure>
+  <%= image_tag @photo.url, alt: "#{@photo.title}" %>  
+  <figcaption>
+    <span class="title"><%= @photo.title %></span>
+    <span class="author"><%= @photo.author %></span>
+  </figcaption>
+  <span class="toolbox">
+    <%= link_to "Edit", photo_path, :'data-method' => 'patch' %>
+    <%= link_to "Delete", photo_path, :'data-method' => 'delete' %>
+  </span>
+</figure>
+<p>
+  <%= link_to "Back to all images", photos_path %>
+</p>
