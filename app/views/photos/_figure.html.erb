@@ -1,0 +1,9 @@
+<figure>
+  <%= link_to photo_path(photo), title: "Show this photo" do %>
+    <%= image_tag photo.url, alt: "#{photo.title}" %>  
+  <% end %>
+  <figcaption>
+    <span class="title"><%= photo.title %></span>
+    <span class="author"><%= photo.author %></span>
+  </figcaption>
+</figure>

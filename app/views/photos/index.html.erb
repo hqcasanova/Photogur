@@ -1,11 +1,11 @@
-<% @photos.each do |photo| %>
-  <figure>
-    <a title="Show this photo" href="<%= photo_path(photo) %>">
-      <%= image_tag photo.url, alt: "#{photo.title}" %>  
-    </a>
-    <figcaption>
-      <span class="title"><%= photo.title %></span>
-      <span class="author"><%= photo.author %></span>
-    </figcaption>
-  </figure>
-<% end %>
+<h1>
+  Most recent
+  <%= image_tag 'divider.png' %>
+</h1>
+<% @photos_recent_five.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
+
+<h1>
+  All
+  <%= image_tag 'divider.png' %>
+</h1>
+<% @photos.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
