@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>Photogur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <h1>
+      <%= link_to root_path do %>
+        <%= image_tag "shutter.png", alt: "Photogur" %>
+        Photogur
+      <% end %>
+    </h1>
+    <% if action_name == "edit" %>
+      <%= link_to "Cancel", photo_path, :class => "button back" %>
+    <% elsif !['new', 'show'].include?(action_name) %>
+      <%= link_to "Upload", new_photo_path, :class => "button upload" %>
+    <% else %>
+      <%= link_to "Gallery", photos_path, :class => "button back" %>
+    <% end %>
+  </header>
+  <section class=<%= "gallery" if action_name == 'index' %>>
+    <%= yield %>  
+  </section>
 </body>
 </html>

@@ -1,3 +1,239 @@
-// Place all the styles related to the Photos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/***** RESET *****
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1em;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/***** CUSTOM DEFAULTS *****/
+html, body {
+  font-size: 100%;
+  line-height: 1.5em;
+  background-color: black;
+  color: rgb(250,250,250);
+  font-family: 'Open Sans', sans-serif
+}
+a {
+  color: rgb(250,250,250);
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+
+/***** SITE-WIDE ****/
+header {
+  margin-bottom: 1em;
+  color: rgb(250,250,250);
+  border-bottom: 1px solid rgba(250,250,250,.6);
+}
+header h1 {
+  display: inline-block;
+  padding: .2em;
+  font-size: 2em;
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+header h1 img {
+  margin-bottom: -.15em;
+  height: 1em;
+  width: auto;
+}
+section h1 {
+  text-align: center;
+  font-size: 1.3em;
+}
+section h1 img {
+  display: block;
+  margin: .5em auto;
+  width: 5em;
+  height: auto;
+}
+.button {
+  float: right;
+  padding: 0 .5em;
+  line-height: 2.57em;
+  background-color: rgb(34, 119, 148);
+  background-image: linear-gradient(rgb(34, 119, 148) 0px, rgb(28, 81, 99) 100%);
+  opacity: .8;
+}
+.button:hover {opacity: 1}
+.upload {
+  background-image: url("upload.png");
+  background-position: .5em center;
+  background-repeat: no-repeat;
+  background-size: 2em;
+  padding-left: 2.8em;
+}
+.back:before {
+  content: "\25C0";
+  padding-right: .4em;
+}
+
+/***** PHOTOS *****/
+figure {
+  position: relative;
+}
+.gallery figure {
+  font-size: 18px;
+}
+figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+figcaption {
+  position: absolute;
+  bottom: 0;
+  padding: .5em;
+  font-size: 1.1em;
+  color: rgb(250,250,250);
+  background-color: rgba(0,0,0,.65);
+}
+
+/***** INDEX PAGE *****/
+.title {
+  font-style: italic;
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+.author {
+  font-size: .8em;
+}
+.author:before {
+  content: 'by ';
+}
+.gallery {
+  overflow: auto; 
+  width: 100%;
+  font-size: 0;
+}
+
+/***** SHOW *****/
+.single-photo {
+  width: 100%;
+}
+.toolbox, .photo-nav {
+  position: absolute;
+  top: .5em;
+}
+.photo-nav {
+  left: .5em;
+}
+.toolbox {
+  right: .5em;
+}
+.photo-nav a {
+  width: 3.4em;
+}
+.photo-nav a, .toolbox a {
+  display: inline-block;
+  padding: .7em;
+  line-height: 0;
+  text-align: center;
+  background-color: rgba(0,0,0,.65);
+  border-radius: 2em;
+  opacity: .8;
+}
+.photo-nav a:hover, .toolbox a:hover {
+  opacity: 1;
+}
+.photo-nav img, .toolbox img {
+  display: inline;
+  height: 2em;
+  width: auto;
+}
+
+/***** FORMS *****/
+form {
+  padding: 0 .7em;
+}
+p {
+  padding: .7em 0;
+  text-align: center;
+}
+div {
+  max-width: 1024px;
+  margin: 1.5em auto;
+  padding: .7em;
+  background-color: rgb(34, 119, 148);
+  background-image: linear-gradient(rgb(34, 119, 148) 0px, rgb(28, 81, 99) 100%);
+}
+label {
+  display: block;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: .5em;
+  font-size: .8em;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  font-size: 1em;
+  border-radius: 1em;
+}
+
+/***** RESPONSIVE *****/
+@media only screen and (min-width: 860px) {
+  body {
+    font-size: 120%;
+  }
+  figure {
+    display: inline-block;
+    width: 50%;
+    vertical-align: bottom;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  body {
+    font-size: 140%;
+  }
+  figure {
+    width: 33.3%;
+  }
+}

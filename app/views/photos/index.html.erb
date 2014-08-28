@@ -1,8 +1,6 @@
-<h1>Photogur</h1>
-<p><%= link_to "Upload an image", new_photo_path %></p>
 <% @photos.each do |photo| %>
   <figure>
-    <a title="<%= "#{photo.author}: #{photo.title}" %>" href="<%= photo_path(photo) %>">
+    <a title="Show this photo" href="<%= photo_path(photo) %>">
       <%= image_tag photo.url, alt: "#{photo.title}" %>  
     </a>
     <figcaption>

@@ -1,16 +1,21 @@
-<h1>Show image</h1>
-
-<figure>
+<figure class="single-photo">
   <%= image_tag @photo.url, alt: "#{@photo.title}" %>  
   <figcaption>
     <span class="title"><%= @photo.title %></span>
     <span class="author"><%= @photo.author %></span>
   </figcaption>
   <span class="toolbox">
-    <%= link_to "Edit", edit_photo_path %>
-    <%= link_to "Delete", photo_path, :'data-method' => 'delete' %>
+    <%= link_to edit_photo_path, title: "Edit this photo's details" do %>
+      <%= image_tag "edit.png", alt: "pencil" %>
+    <% end %>
+    <%= link_to photo_path, title: "Delete this photo", :'data-method' => 'delete' do %>
+      <%= image_tag "delete.png", alt: "trash" %>
+    <% end %>
+  </span>
+
+  <!-- Best with ajax. Still reading up on how to get next/previous record... -->
+  <span class="photo-nav">
+    <a href="<%= @photo.id > @first_id ? photo_path(@photo.id - 1) : photo_path(@photo.id) %>" title="Previous photo in gallery"><%= image_tag "prev.png", alt: "previous" %></a> 
+    <a href="<%= @photo.id < @last_id ? photo_path(@photo.id + 1) : photo_path(@photo.id) %>" title="Next photo in gallery"><%= image_tag "next.png", alt: "next" %></a>
   </span>
 </figure>
-<p>
-  <%= link_to "Back to all images", photos_path %>
-</p>
