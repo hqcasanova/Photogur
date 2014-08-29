@@ -1,11 +1,21 @@
 <h1>
-  Most recent
+  Most recent 5 photos
   <%= image_tag 'divider.png' %>
 </h1>
-<% @photos_recent_five.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
-
+<div class="masonry">
+  <% @photos_recent_five.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
+</div>
 <h1>
-  All
+  Older than a month: <%= @photos_older_month.count %> photos
   <%= image_tag 'divider.png' %>
 </h1>
-<% @photos.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
+<div class="masonry">
+  <% @photos_older_month.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
+</div>
+<h1>
+  All: <%= @photos.count %> photos
+  <%= image_tag 'divider.png' %>
+</h1>
+<div class="masonry">
+  <% @photos.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
+</div>

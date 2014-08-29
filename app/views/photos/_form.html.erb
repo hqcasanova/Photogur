@@ -1,14 +1,14 @@
 <p>Please, fill in all the fields below</p>
 <%= form_for @photo do |form| %>
-  <div>
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, :required => true %>
   </div>
-  <div>
+  <div class="field">
     <%= form.label :author %>
     <%= form.text_field :author, :required => true %>
   </div>
-  <div>
+  <div class="field">
     <%= form.label :url %>
     <%= form.url_field :url, :required => true %>
   </div>
