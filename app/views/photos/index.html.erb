@@ -1,20 +1,20 @@
+<div class="gallery-nav">
+  <%= link_to 'Older photos', '#old', title: "Photos older than a month" %><%= link_to 'All photos', '#all', title: "All the photos" %>
+</div>
 <h1>
   Most recent 5 photos
-  <%= image_tag 'divider.png' %>
 </h1>
 <div class="masonry">
   <% @photos_recent_five.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
 </div>
-<h1>
+<h1 id="old">
   Older than a month: <%= @photos_older_month.count %> photos
-  <%= image_tag 'divider.png' %>
 </h1>
 <div class="masonry">
   <% @photos_older_month.each do |photo| %><%= render 'figure', :photo => photo %><% end %>
 </div>
-<h1>
+<h1 id="all">
   All: <%= @photos.count %> photos
-  <%= image_tag 'divider.png' %>
 </h1>
 <div class="masonry">
   <% @photos.each do |photo| %><%= render 'figure', :photo => photo %><% end %>

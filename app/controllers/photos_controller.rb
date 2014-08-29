@@ -9,6 +9,8 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @first_id = Photo.first.id
     @last_id = Photo.last.id
+    @next_id = Photo.next(@photo.id)
+    @prev_id = Photo.prev(@photo.id)
   end
 
   def new

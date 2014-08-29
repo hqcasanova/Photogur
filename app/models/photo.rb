@@ -5,4 +5,20 @@ class Photo < ActiveRecord::Base
   def self.created_before(time)
     where("created_at < ?", time)
   end
+
+  def self.next(current_id)
+    if (current_id < last.id)
+      where("id > ?", current_id).first.id
+    else
+      current_id
+    end
+  end
+
+  def self.prev(current_id)
+    if (current_id > first.id)
+      where("id < ?", current_id).last.id
+    else 
+      current_id
+    end
+  end
 end

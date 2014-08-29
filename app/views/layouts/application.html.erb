@@ -17,11 +17,11 @@
       <% end %>
     </h1>
     <% if action_name == "edit" %>
-      <%= link_to "Cancel", photo_path, :class => "button back" %>
+      <%= link_to "Cancel", photo_path, :class => "button-top back" %>
     <% elsif !['new', 'show'].include?(action_name) %>
-      <%= link_to "Upload", new_photo_path, :class => "button upload" %>
+      <%= link_to "Upload", new_photo_path, :class => "button-top upload" %>
     <% else %>
-      <%= link_to "Gallery", photos_path, :class => "button back" %>
+      <%= link_to "Gallery", photos_path, :class => "button-top back" %>
     <% end %>
   </header>
   <section class=<%= "gallery" if action_name == 'index' %>>
