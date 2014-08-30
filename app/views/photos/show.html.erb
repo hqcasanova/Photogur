@@ -15,7 +15,7 @@
 
   <!-- Best with ajax -->
   <span class="photo-nav">
-    <a href="<%= @photo.id > @first_id ? photo_path(@prev_id) : photo_path(@photo.id) %>" title="Previous photo in gallery"><%= image_tag "prev.png", alt: "previous" %></a> 
-    <a href="<%= @photo.id < @last_id ? photo_path(@next_id) : photo_path(@photo.id) %>" title="Next photo in gallery"><%= image_tag "next.png", alt: "next" %></a>
+    <a href="<%= @photo.prev %>" title="Previous photo in gallery"><%= image_tag "prev.png", alt: "previous" %></a> 
+    <a href="<%= @photo.next %>" title="Next photo in gallery"><%= image_tag "next.png", alt: "next" %></a>
   </span>
 </figure>

@@ -6,19 +6,19 @@ class Photo < ActiveRecord::Base
     where("created_at < ?", time)
   end
 
-  def self.next(current_id)
-    if (current_id < last.id)
-      where("id > ?", current_id).first.id
+  def next
+    if (id < Photo.last.id)
+      Photo.where("id > ?", id).first.id
     else
-      current_id
+      id
     end
   end
 
-  def self.prev(current_id)
-    if (current_id > first.id)
-      where("id < ?", current_id).last.id
+  def prev
+    if (id > Photo.first.id)
+      Photo.where("id < ?", id).last.id
     else 
-      current_id
+      id
     end
   end
 end
