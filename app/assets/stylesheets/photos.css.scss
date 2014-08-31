@@ -86,7 +86,7 @@ section h1 {
   padding-bottom: 1em;
   text-align: center;
   font-size: 1.35em;
-  background: url('divider.png') center bottom no-repeat;
+  background: asset-url('divider.png') center bottom no-repeat;
   background-size: auto 1em;
 }
 .button-top {
@@ -99,7 +99,7 @@ section h1 {
 }
 .button-top:hover {opacity: 1}
 .upload {
-  background-image: url("upload.png");
+  background-image: asset-url("upload.png");
   background-position: .5em center;
   background-repeat: no-repeat;
   background-size: 2em;
