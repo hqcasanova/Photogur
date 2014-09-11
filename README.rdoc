@@ -1,11 +1,11 @@
 == Photogur
 
-My first Ruby on Rails website: a very basic imitation of Imgur with a layout inspired on the Masonry plugin, minimal static UX and responsive design. No attention has been paid to cross-browser or authorization issues.
+My first Ruby on Rails website: a very basic imitation of Imgur with a layout inspired in the Masonry plugin, minimal static UX and responsive design. No attention has been paid to cross-browser or authorization issues.
 
-One of the assignments of Bitmaker's Web Development program. Its main goal is to introduce the student to Rail's implementation of the MVC architechture:
+One of the assignments of Bitmaker's Web Development program. Its main goal is to introduce the student to Rail's Model-View-Controller architecture:
 
 * Save data to a database.
 
-* Know how to configure a Rails app so that given a URL, certain data is retrieved from the database.
+* Know how to configure a Rails application so that given a URL, certain data is retrieved from the database.
 
 * Know how to display that data using HTML and CSS.
