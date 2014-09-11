@@ -1,28 +1,11 @@
-== README
+== Photogur
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My first Ruby on Rails website: a very basic imitation of Imgur with a layout inspired on the Masonry plugin, minimal static UX and responsive design. No attention has been paid to cross-browser or authorization issues.
 
-Things you may want to cover:
+One of the assignments of Bitmaker's Web Development program. Its main goal is to introduce the student to Rail's implementation of the MVC architechture:
 
-* Ruby version
+* Save data to a database.
 
-* System dependencies
+* Know how to configure a Rails app so that given a URL, certain data is retrieved from the database.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Know how to display that data using HTML and CSS.
