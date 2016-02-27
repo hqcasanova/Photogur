@@ -1,6 +1,6 @@
 == Photogur
 
-My first Ruby on Rails website: a very basic imitation of Imgur with a layout inspired in the Masonry plugin, minimal static UX and responsive design. No attention has been paid to cross-browser or authorization issues.
+My first Ruby on Rails website: a very basic imitation of Imgur with a layout inspired in the Masonry plugin, minimal static UX and responsive design. No attention has been paid to cross-browser or authorization issues. Give it a go at http://secret-spire-3861.herokuapp.com/
 
 One of the assignments of Bitmaker's Web Development program. Its main goal is to introduce the student to Rail's Model-View-Controller architecture:
 
